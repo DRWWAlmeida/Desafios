@@ -1,26 +1,27 @@
+# Desafio com funções
+
+'''
+Criar um programa que calcula a quantidade de tinta necessaria para pintar uma parede.
+O usuario devera fornencer as seguintes informações: Rendimento, Altura, e Largura.
+O programa deve mostrar na tela a mensagem "Voce precisa de X latas de tinta."
+'''
 
 
-def resposta():
-    res = int(input("Qual a temperatura da carne? "))
-    return verify(res)
+def rend(a, b, c):
+    x = c*b/a
+    print(f'Você necessita de {x} latas de tinta!')
 
-def verify(res):        
-    if res < 48:
-        print("A Carne ainda está crua!")
-    elif res in range(48, 54):
-        print("rare")
-    elif res in range(54, 60):
-        print("Medium Rare")
-    elif res in range(60, 65):
-        print("Medium")
-    elif res in range(65, 72):
-        print("Medium well")
-    elif res > 71:
-        print("Medium well")
-    else:
-        print("Well done!")
-    resposta()
-resposta()
+
+rendimento = int(input('Qual o rendimento da lata de tinta? '))
+altura = int(input('Qual é a altura da parede? '))
+largura = int(input('Qual a largura da parede? '))
+rend(rendimento, altura, largura)
+
+
+
+
+
+
 
 
 
