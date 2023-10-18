@@ -1,38 +1,44 @@
-# Desafio com 'Sets'
+# Desafio Calculadora de IMC - Indice de Massa Corporal
 
 '''
-Criar um programa que gera 3 listas de acordo com a necessidade logo abaixo:
+Dados do usuario:
+    - Altura em cm
+    - Peso em kg
 
-Lista1 = Funcionarios que tem carro e trabalha a noite
-Lista2 = Funcioanrios que tem carro e trabalha durante o dia
-Lista2 = Funcionarios que não tem carro
+Parametros:
+    Menor que 18,5 = MAGREZA
+    Entre 18,5 e 24,9 = NORMAL
+    Entre 25,0 e 29,9 = SOBREPESO
+    Entre 30,0 e 39,9 = OBESIDADE
+    Maior que 40,0 = OBESIDADE GRAVE
 '''
 
+def imc(a, p):
+    imc = round(p/((a**2)/10000), 2)
+    print(imc)
+    if imc <= 18.5:
+        print('MAGREZA')
+    elif 18.5 < imc <= 24.9:
+        print('NORMAL')
+    elif 25 < imc <= 29.9:
+        print('SOBREPESO')
+    elif 30 < imc <= 39.9:
+        print('OBESIDADE')
+    elif 40 <= imc:
+        print('OBESIDADE GRAVE!')
+    else:
+        ('Quebrou a balança!')
 
-funcionarios = ['Ana', 'Marcos', 'Alice', 'Pedro', 'Sophia', 'Bruno', 'Melissa']
-turno_dia = ['Ana', 'Marcos', 'Alice', 'Melissa']
-turno_noite = ['Pedro', 'Sophia', 'Bruno']
-tem_carro = ['Marcos', 'Alice', 'Bruno', 'Melissa']
 
-'''set_funcionarios = set(funcionarios)
-set_turno_dia = set(turno_dia)
-set_turno_noite = set(turno_noite)
-set_tem_carro = set(tem_carro)
+altura = float(input('Qual a sua altura em centimetros: '))
+peso = float(input('Qual o seu peso em kg: '))
+imc(altura, peso)
 
-print(f'Funcionarios que tem carro e trabalha a noite:{set_tem_carro & set_turno_noite}')
-print(f'Funcionarios que tem carro e trabalha de dia:{set_tem_carro & set_turno_dia}')
-print(f'Funcionarios que não tem carro:{set_funcionarios ^ set_tem_carro}')'''
 
-#resolução professor
 
-lista1 = set(tem_carro).intersection(turno_noite)
-print(f'Funcionarios que tem carro e trabalha a noite:{lista1}')
 
-lista2 = set(tem_carro).intersection(turno_dia)
-print(f'Funcionarios que tem carro e trabalha de dia:{lista2}')
 
-lista3 = set(funcionarios).difference(tem_carro)
-print(f'Funcionarios que não tem carro:{lista3}')
+
 
 
 
